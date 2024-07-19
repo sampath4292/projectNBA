@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disease Predictions</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://th.bing.com/th/id/OIP.zaCx6wRgx3jJsEcOMRh0KgHaBf?rs=1&pid=ImgDetMain"
+        alt="College Logo"
+        id="college-logo"
+      />
+    </header>
+    <h1>Disease Prediction System</h1>
+    <main>
+      <h2 id="welcome-message" ></h2>
+      <li class="container">
+        Based on your input, here are the potential health risks and recommended
+        precautions.
+      </li>
+      <li class="container">
+        Based on the analysis of data from over 10,000 sample cases, we have
+        generated the following predictions and precautions for you. These
+        insights are derived from patterns observed in individuals with similar
+        health histories and blood groups.
+      </li>
+      <table id="disease-table" border="1">
+        <!-- Table content will be inserted here dynamically -->
+      </table>
+      <div id="precaution-section">
+        <h2>Precaution Details</h2>
+        <p id="precaution-content">Select a disease to see precautions.</p>
+      </div>
+      <h2>Disclamier:</h2>
+      <p class="container">
+        The results of this project are based on available data and statistical
+        models. While efforts have been made to ensure accuracy, it is important
+        to note that predictive models in healthcare are continuously evolving
+        and subject to limitations, including data quality and sample size.
+        Consultation with healthcare professionals is advised for accurate
+        diagnosis and treatment decisions.
+      </p>
+      <button class="submit-button" onclick="goBack()">Back</button>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Disease Prediction Tool. All rights reserved.</p>
+      <p>
+        for Queries contact :<a href="mailto:reshmasasanapuri@gmail.com"
+          >reshmasasanapuri@gmail.com</a
+        >
+      </p>
+    </footer>
+    <script src="./script.js"></script>
+    <script>
+      document.getElementById("disease-table").innerHTML =
+        localStorage.getItem("diseaseTable");
+      const userName = localStorage.getItem("userName");
+      document.getElementById(
+        "welcome-message"
+      ).innerText = `Welcome ${userName}!`;
+      function goBack() {
+        window.location.href = "disease.html"; // Replace with your main page URL
+      }
+    </script>
+  </body>
+</html>
